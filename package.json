@@ -1,0 +1,35 @@
+{
+  "name": "todo-react-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/webpack",
+    "watch": "npm run build -- --watch",
+    "start": "./node_modules/.bin/webpack-dev-server --open --inline --output-public-path='/dist'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabsprates/todo-react-typescript.git"
+  },
+  "author": "Gabriel Prates <gabsprates@gmail.com> (http://gabrielprates.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gabsprates/todo-react-typescript/issues"
+  },
+  "homepage": "https://github.com/gabsprates/todo-react-typescript#readme",
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.4.1",
+    "source-map-loader": "^0.2.3",
+    "typescript": "^2.7.2",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "dependencies": {
+    "@types/react": "^16.0.38",
+    "@types/react-dom": "^16.0.4",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
