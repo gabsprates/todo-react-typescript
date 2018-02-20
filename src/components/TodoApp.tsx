@@ -1,10 +1,20 @@
 import * as React from "react";
-import TodoList from "./TodoList";
+import TodoList, { ItemType } from "./TodoList";
 
-class TodoApp extends React.Component {
-  constructor(props) {
+type StateType = {
+  items: Array<ItemType>,
+  text: string
+};
+
+class TodoApp extends React.Component<{}, StateType> {
+  static defaultState: StateType = {
+    items:[],
+    text: ""
+  };
+
+  constructor(props: {}) {
     super(props);
-    this.state = { items: [], text: '' };
+    this.state = TodoApp.defaultState;
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -27,11 +37,11 @@ class TodoApp extends React.Component {
     );
   }
 
-  handleChange(e) {
+  handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     this.setState({ text: e.target.value });
   }
 
-  handleSubmit(e) {
+  handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!this.state.text.length) {
       return;
