@@ -17,6 +17,7 @@ class TodoApp extends React.Component<{}, StateType> {
     this.state = TodoApp.defaultState;
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
 
   render() {
@@ -32,9 +33,16 @@ class TodoApp extends React.Component<{}, StateType> {
           <button>
             Add #{this.state.items.length + 1}
           </button>
+          <button type="button" onClick={this.handleReset}>
+            Reset list
+          </button>
         </form>
       </div>
     );
+  }
+
+  handleReset() {
+    this.setState(TodoApp.defaultState);
   }
 
   handleChange(e: React.ChangeEvent<HTMLInputElement>) {
