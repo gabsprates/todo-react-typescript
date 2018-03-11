@@ -62,4 +62,6 @@ typings/
 
 
 ## project
+__work__
 dist
+*.sw[op]
